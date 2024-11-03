@@ -3,6 +3,7 @@ package gocud
 import "image/color"
 
 var (
+	// Accent Colors
 	RED      color.RGBA = color.RGBA{255, 75, 0, 255}
 	YELLOW   color.RGBA = color.RGBA{255, 241, 0, 255}
 	GREEN    color.RGBA = color.RGBA{3, 175, 122, 255}
@@ -16,12 +17,8 @@ var (
 
 var ACCENT_SET [9]color.RGBA = [9]color.RGBA{RED, YELLOW, GREEN, BLUE, SKY_BLUE, PINK, ORANGE, PURPLE, BROWN}
 
-// / Resturn Acceent set
-// / Order: RED, YELLOW, GREEN, BLUE, SKY_BLUE, PINK, ORANGE, PURPLE, BROWN
-func AccentSet(nums int) []color.RGBA {
-	if nums > len(ACCENT_SET) {
-		return []color.RGBA{}
-	}
+var Accent6Pattern []color.RGBA = []color.RGBA{ORANGE, YELLOW, GREEN, BLUE, SKY_BLUE, BROWN}
 
-	return ACCENT_SET[0:nums]
-}
+var Accent5Pattern []color.RGBA = []color.RGBA{RED, YELLOW, GREEN, BLUE, SKY_BLUE}
+
+var Accent4Patter []color.RGBA = []color.RGBA{RED, YELLOW, GREEN, SKY_BLUE}
