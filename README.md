@@ -85,79 +85,6 @@ func main() {
 シンプルな可視化に適した4色パターン:
 `[RED, YELLOW, GREEN, SKY_BLUE]`
 
-## Usage Examples
-
-### チャート作成
-
-```go
-package main
-
-import (
-    "image"
-    "image/color"
-    "image/draw"
-    "github.com/KatzMatz/gocud"
-)
-
-func createChart() *image.RGBA {
-    img := image.NewRGBA(image.Rect(0, 0, 400, 300))
-    
-    // アクセシブルな色パターンを使用
-    colors := gocud.Accent4Pattern()
-    
-    for i, col := range colors {
-        // 色付き矩形を描画
-        rgba := col.RGB(255)
-        drawRect(img, i*100, 0, 100, 100, rgba)
-    }
-    
-    return img
-}
-```
-
-### Web用CSS生成
-
-```go
-package main
-
-import (
-    "fmt"
-    "github.com/KatzMatz/gocud"
-)
-
-func generateCSS() {
-    colors := gocud.Accent6Pattern()
-    
-    for i, color := range colors {
-        rgba := color.RGB(255)
-        fmt.Printf(".color-%d { color: rgba(%d, %d, %d, %.2f); }\n", 
-            i+1, rgba.R, rgba.G, rgba.B, float64(rgba.A)/255.0)
-    }
-}
-```
-
-### 印刷用CMYK出力
-
-```go
-package main
-
-import (
-    "fmt"
-    "github.com/KatzMatz/gocud"
-)
-
-func printColors() {
-    colors := gocud.AccentSet()
-    
-    fmt.Println("印刷用CMYK値:")
-    for _, color := range colors {
-        cmyk := color.CMYK()
-        fmt.Printf("%s: C=%d M=%d Y=%d K=%d\n", 
-            color.JpmaCode, cmyk.C, cmyk.M, cmyk.Y, cmyk.K)
-    }
-}
-```
-
 
 ## Color Universal Design について
 
@@ -167,9 +94,6 @@ func printColors() {
 - **識別可能性**: 1型色覚、2型色覚、3型色覚の方でも色の区別が可能
 - **プロフェッショナル品質**: ビジネスプレゼンテーション、学術論文、公的資料に適用可能
 
-## License
-
-このプロジェクトはMITライセンスの下で公開されています - 詳細は [LICENSE](LICENSE) ファイルを参照してください。
 
 ## 出典
 
