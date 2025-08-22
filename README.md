@@ -158,39 +158,6 @@ func printColors() {
 }
 ```
 
-## API Reference
-
-### Types
-
-#### Color
-```go
-type Color struct {
-    JpmaCode string // 日本塗料工業会コード
-    // プライベートなRGBフィールド
-}
-```
-
-### Methods
-
-#### `(c *Color) RGB(alpha uint8) color.RGBA`
-指定されたアルファ値で`color.RGBA`として色を返します。
-
-#### `(c Color) CMYK() color.CMYK`
-印刷用の`color.CMYK`として色を返します。
-
-### Functions
-
-#### `AccentSet() []Color`
-利用可能な全9色のアクセント色を返します。
-
-#### `Accent6Pattern() []Color`
-包括的な可視化用の6色パレットを返します。
-
-#### `Accent5Pattern() []Color`
-中程度の複雑さのデータ用の5色パレットを返します。
-
-#### `Accent4Pattern() []Color`
-シンプルな可視化用の4色パレットを返します。
 
 ## Color Universal Design について
 
@@ -199,14 +166,6 @@ type Color struct {
 - **高コントラスト**: 全ての色が十分なコントラスト比を維持
 - **識別可能性**: 1型色覚、2型色覚、3型色覚の方でも色の区別が可能
 - **プロフェッショナル品質**: ビジネスプレゼンテーション、学術論文、公的資料に適用可能
-
-## Contributing
-
-1. リポジトリをフォーク
-2. フィーチャーブランチを作成 (`git checkout -b feature/amazing-feature`)
-3. 変更をコミット (`git commit -m 'Add amazing feature'`)
-4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
-5. プルリクエストを開く
 
 ## License
 
